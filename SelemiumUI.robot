@@ -4,16 +4,22 @@ Library  SeleniumLibrary
 
 *** Keywords ***
 
-Login to Fastwork
+Login
 
-    open browser    https://auth.fastwork.co/oauth/authorize?response_type=code&client_id=be5eedd3-5e8b-42a5-a927-0f1a01c290e9&callback_url=https%3A%2F%2Ffastwork.co%2Fcallback%3Fredirect%3DLw%3D%3D&_ga=2.169553377.1947825705.1636735384-489995391.1636114109   Chrome
-    input text      //input[@id="authorize-request-Credential"]      ikwaiingo@gmail.com
-    click button    Next
-    input text      //input[@id="signin-request-Password"]       mrmeesix666
-    click button     เข้าสู่ระบบ
+    open browser    https://www.google.com/intl/th/gmail/about/#   Chrome
+    click link    //a[@data-action="sign in"]
+    input text      //input[@type="email"]      paritbutqa.p@gmail.com
+    click button    //button[@class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc qIypjc TrZEUc lw1w4b"]
+    sleep  2s
+    input text      //input[@type="password"]       paritbutqa666
+    click button     //button[@class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc qIypjc TrZEUc lw1w4b"]
+    Maximize Browser Window
+    Wait Until Element Is Visible  //img[@class="gb_Ca gbii"]
+    close browser
+
 
 *** Test Cases ***
-TC 1 : Login to Fastwork
-    Login to Fastwork
+TC 1 : Login to Gmail
+    Login
 
 
